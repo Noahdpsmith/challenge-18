@@ -8,12 +8,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(require("./routes"));
 
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/challenge-13",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  }
-);
+
+    mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/social-media', {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    });
 mongoose.set("debug", true);
 app.listen(PORT, () => console.log(`Connected on localhost:${PORT}`));

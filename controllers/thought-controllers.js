@@ -68,7 +68,6 @@ const thoughtController = {
           })
           .catch((err) => res.json(err));
       },
-    // add Reaction
     addReaction({ params, body }, res) {
       Thought.findOneAndUpdate(
         { _id: params.thoughtId },
